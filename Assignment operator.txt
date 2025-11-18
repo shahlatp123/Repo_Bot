@@ -1,0 +1,12 @@
+// Declare and initialize variables
+        int a = 10;    // Assign 10 to variable a
+        int b = 5;     // Assign 5 to variable b
+
+      
+  // Using the assignment operator
+        a = b;         // Assign the value of b to a
+
+       
+ // Print the result
+        System.out.println("The value of a is: " + a); // Output will be 5
+	
