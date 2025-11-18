@@ -1,1 +1,91 @@
 automation testing code
+
+package Basics;
+
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class phplgn {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		
+WebDriver driver=new ChromeDriver();
+		
+
+		driver.get("https://phptravels.com/");
+		driver.manage().window().maximize();
+		Thread.sleep(2000);
+		
+		
+		  // Assuming there is a “Login” button/link – change locator as needed
+	    WebElement loginLink = driver.findElement(By.xpath("/html/body/header/div[1]/div/div[2]/a[2]"));
+	    loginLink.click();
+
+		
+		
+		
+		
+		
+		 
+  	  // WINDOW HANDLING
+	     
+  	   String parentwindow = driver.getWindowHandle();     //php site
+  	    // System.out.println("parent handle id="+ parentwindow);
+  	    
+  	    Set <String> allwindows = driver.getWindowHandles();
+  		//System.out.println("Displaying all handles..........");
+
+  		
+  		allwindows.remove(parentwindow);
+  		String secondwindow = allwindows.iterator().next();      //fetching new window  new handle=child handle
+  		driver.switchTo().window(secondwindow);       //switch the control to that window
+  	 
+  		Thread.sleep(3000);
+  		
+  	    driver.findElement(By.id("email")).sendKeys("abhinandprakash.ap@gmail.com");
+  	  Thread.sleep(3000);
+  	  
+  	   driver.findElement(By.id("password")).sendKeys("abhi96#*@96");
+  	 Thread.sleep(3000);
+  	 
+  	 
+  	 driver.findElement(By.xpath("//*[@id=\"login-form\"]/div[4]/button/span[1]")).click();
+  	Thread.sleep(3000);
+  	
+  	
+  	
+  	
+  	
+  /*	 // Assuming there is a “forgot” button/link – change locator as needed
+    WebElement forgotpassword = driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/form/div[3]/div[2]/a"));
+    forgotpassword.click();*/
+  	
+   	driver.findElement(By.xpath("/html/body/aside/nav/a[2]/span")).click();
+   
+  //  WebElement logout = driver.findElement(By.xpath("/html/body/aside/div[2]/div[3]/a[2]"));
+    //logout.click();
+  	
+   
+  	
+  	 // driver.quit();
+		
+		
+		
+		
+		
+		
+	}
+
+
+
+
+	}
+
+
+
